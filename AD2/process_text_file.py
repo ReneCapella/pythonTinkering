@@ -18,10 +18,9 @@ file = open("Project2Input.txt", "a")
 text_to_append = input("Enter the text you want to add to the file: ")
 file.write(text_to_append)
 file.close()
-input("are you ready?")
 
 # Saves a copy of the file with a different file name
-os.system('cp Project2Input.txt MyNewCopy.txt')
+os.system('cp Project2Input.txt Project2Update.txt')
 
 # Deletes the original file
 os.remove("Project2Input.txt")
