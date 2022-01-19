@@ -1,0 +1,106 @@
+ 
+
+
+
+
+
+
+
+  
+
+
+
+
+   
+
+
+
+   
+
+
+
+[ec2-user@ip-172-31-82-247 log]$ sudo cat secure
+Jan  4 20:22:40 ip-172-31-82-247 useradd[3033]: new group: name=ec2-user, GID=10               00
+Jan  4 20:22:40 ip-172-31-82-247 useradd[3033]: new user: name=ec2-user, UID=100               0, GID=1000, home=/home/ec2-user, shell=/bin/bash
+Jan  4 20:22:40 ip-172-31-82-247 useradd[3033]: add 'ec2-user' to group 'adm'
+Jan  4 20:22:40 ip-172-31-82-247 useradd[3033]: add 'ec2-user' to group 'wheel'
+Jan  4 20:22:40 ip-172-31-82-247 useradd[3033]: add 'ec2-user' to group 'systemd               -journal'
+Jan  4 20:22:40 ip-172-31-82-247 useradd[3033]: add 'ec2-user' to shadow group '               adm'
+Jan  4 20:22:40 ip-172-31-82-247 useradd[3033]: add 'ec2-user' to shadow group '               wheel'
+Jan  4 20:22:40 ip-172-31-82-247 useradd[3033]: add 'ec2-user' to shadow group '               systemd-journal'
+Jan  4 20:22:40 ip-172-31-82-247 sshd[3106]: Server listening on 0.0.0.0 port 22               .
+Jan  4 20:22:40 ip-172-31-82-247 sshd[3106]: Server listening on :: port 22.
+Jan  4 20:22:41 ip-172-31-82-247 sshd[3106]: Received signal 15; terminating.
+Jan  4 20:22:41 ip-172-31-82-247 sshd[3225]: Server listening on 0.0.0.0 port 22               .
+Jan  4 20:22:41 ip-172-31-82-247 sshd[3225]: Server listening on :: port 22.
+Jan  4 20:23:06 ip-172-31-82-247 sshd[3282]: error: AuthorizedKeysCommand /opt/a               ws/bin/eic_run_authorized_keys ec2-user SHA256:IPcAm2x/p/a75U0263rAa74PYjSlfnhxK               pfChgECdVE failed, status 22
+Jan  4 20:23:06 ip-172-31-82-247 sshd[3282]: error: AuthorizedKeysCommand /opt/a               ws/bin/eic_run_authorized_keys ec2-user SHA256:IPcAm2x/p/a75U0263rAa74PYjSlfnhxK               pfChgECdVE failed, status 22
+Jan  4 20:23:06 ip-172-31-82-247 sshd[3282]: Accepted publickey for ec2-user fro               m 73.169.221.12 port 10726 ssh2: RSA SHA256:IPcAm2x/p/a75U0263rAa74PYjSlfnhxKpfC               hgECdVE
+Jan  4 20:23:06 ip-172-31-82-247 sshd[3282]: pam_unix(sshd:session): session ope               ned for user ec2-user by (uid=0)
+Jan  4 20:23:34 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user                ; USER=root ; COMMAND=/bin/yum update -y
+Jan  4 20:23:34 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  4 20:23:50 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  4 20:24:04 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user                ; USER=root ; COMMAND=/bin/yum install git
+Jan  4 20:24:04 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  4 20:24:10 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  4 20:28:32 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user                ; USER=root ; COMMAND=/bin/amazon-linux-extras install docker
+Jan  4 20:28:32 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  4 20:28:47 ip-172-31-82-247 groupadd[6403]: group added to /etc/group: name               =cgred, GID=993
+Jan  4 20:28:47 ip-172-31-82-247 groupadd[6403]: group added to /etc/gshadow: na               me=cgred
+Jan  4 20:28:47 ip-172-31-82-247 groupadd[6403]: new group: name=cgred, GID=993
+Jan  4 20:28:47 ip-172-31-82-247 groupadd[6410]: group added to /etc/group: name               =docker, GID=992
+Jan  4 20:28:47 ip-172-31-82-247 groupadd[6410]: group added to /etc/gshadow: na               me=docker
+Jan  4 20:28:47 ip-172-31-82-247 groupadd[6410]: new group: name=docker, GID=992
+Jan  4 20:28:54 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  4 20:29:07 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user                ; USER=root ; COMMAND=/sbin/service docker start
+Jan  4 20:29:07 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  4 20:29:08 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  4 20:29:34 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user                ; USER=root ; COMMAND=/sbin/usermod -a -G docker ec2-user
+Jan  4 20:29:34 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  4 20:29:34 ip-172-31-82-247 usermod[6634]: add 'ec2-user' to group 'docker'
+Jan  4 20:29:34 ip-172-31-82-247 usermod[6634]: add 'ec2-user' to shadow group '               docker'
+Jan  4 20:29:34 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  4 20:29:41 ip-172-31-82-247 sshd[3282]: pam_unix(sshd:session): session clo               sed for user ec2-user
+Jan  4 20:30:17 ip-172-31-82-247 sshd[6650]: error: AuthorizedKeysCommand /opt/a               ws/bin/eic_run_authorized_keys ec2-user SHA256:IPcAm2x/p/a75U0263rAa74PYjSlfnhxK               pfChgECdVE failed, status 22
+Jan  4 20:30:18 ip-172-31-82-247 sshd[6650]: error: AuthorizedKeysCommand /opt/a               ws/bin/eic_run_authorized_keys ec2-user SHA256:IPcAm2x/p/a75U0263rAa74PYjSlfnhxK               pfChgECdVE failed, status 22
+Jan  4 20:30:18 ip-172-31-82-247 sshd[6650]: Accepted publickey for ec2-user fro               m 73.169.221.12 port 10783 ssh2: RSA SHA256:IPcAm2x/p/a75U0263rAa74PYjSlfnhxKpfC               hgECdVE
+Jan  4 20:30:18 ip-172-31-82-247 sshd[6650]: pam_unix(sshd:session): session ope               ned for user ec2-user by (uid=0)
+Jan  4 20:30:58 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user                ; USER=root ; COMMAND=/bin/git clone https://github.com/rbunge-nsc/it111-w22
+Jan  4 20:30:58 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  4 20:30:58 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  4 20:32:36 ip-172-31-82-247 sshd[6740]: Did not receive identification stri               ng from 141.98.11.16 port 55076
+Jan  4 20:32:52 ip-172-31-82-247 sshd[6742]: Connection closed by 141.98.11.16 p               ort 34518 [preauth]
+Jan  4 21:28:34 ip-172-31-82-247 sshd[3225]: Received signal 15; terminating.
+Jan  4 21:28:34 ip-172-31-82-247 sshd[6650]: pam_systemd(sshd:session): Failed t               o release session: Interrupted system call
+Jan  4 21:28:34 ip-172-31-82-247 sshd[6650]: pam_unix(sshd:session): session clo               sed for user ec2-user
+Jan  5 01:14:43 ip-172-31-82-247 sshd[3016]: Server listening on 0.0.0.0 port 22               .
+Jan  5 01:14:43 ip-172-31-82-247 sshd[3016]: Server listening on :: port 22.
+Jan  5 01:17:37 ip-172-31-82-247 sshd[3195]: error: AuthorizedKeysCommand /opt/a               ws/bin/eic_run_authorized_keys ec2-user SHA256:IPcAm2x/p/a75U0263rAa74PYjSlfnhxK               pfChgECdVE failed, status 22
+Jan  5 01:17:37 ip-172-31-82-247 sshd[3195]: error: AuthorizedKeysCommand /opt/a               ws/bin/eic_run_authorized_keys ec2-user SHA256:IPcAm2x/p/a75U0263rAa74PYjSlfnhxK               pfChgECdVE failed, status 22
+Jan  5 01:17:38 ip-172-31-82-247 sshd[3195]: Accepted publickey for ec2-user fro               m 73.169.221.12 port 12764 ssh2: RSA SHA256:IPcAm2x/p/a75U0263rAa74PYjSlfnhxKpfC               hgECdVE
+Jan  5 01:17:38 ip-172-31-82-247 sshd[3195]: pam_unix(sshd:session): session ope               ned for user ec2-user by (uid=0)
+Jan  5 01:18:35 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user                ; USER=root ; COMMAND=/sbin/service docker start
+Jan  5 01:18:35 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  5 01:18:37 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  5 01:19:03 ip-172-31-82-247 sshd[3474]: Did not receive identification stri               ng from 46.19.139.18 port 58036
+Jan  5 01:19:26 ip-172-31-82-247 sshd[3478]: reverse mapping checking getaddrinf               o for theta.pokemon-vortex.com [46.19.139.18] failed - POSSIBLE BREAK-IN ATTEMPT               !
+Jan  5 01:19:26 ip-172-31-82-247 sshd[3478]: Invalid user user from 46.19.139.18                port 53432
+Jan  5 01:19:26 ip-172-31-82-247 sshd[3478]: input_userauth_request: invalid use               r user [preauth]
+Jan  5 01:19:26 ip-172-31-82-247 sshd[3478]: Received disconnect from 46.19.139.               18 port 53432:11: Normal Shutdown, Thank you for playing [preauth]
+Jan  5 01:19:26 ip-172-31-82-247 sshd[3478]: Disconnected from 46.19.139.18 port                53432 [preauth]
+Jan  5 01:20:03 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/home/ec2-user               /it111-w22/Week3 ; USER=root ; COMMAND=/bin/git pull https://github.com/rbunge-n               sc/it111-w22/
+Jan  5 01:20:03 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  5 01:20:04 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  5 01:25:56 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/var/log/amazo               n ; USER=root ; COMMAND=/bin/cd ssm
+Jan  5 01:25:56 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  5 01:25:56 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  5 01:26:25 ip-172-31-82-247 sshd[3669]: Connection closed by 198.199.92.190                port 50514 [preauth]
+Jan  5 01:27:22 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/var/log ; USE               R=root ; COMMAND=/bin/cat yum.log
+Jan  5 01:27:22 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  5 01:27:22 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  5 01:27:48 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/var/log ; USE               R=root ; COMMAND=/bin/cat boot.log
+Jan  5 01:27:48 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+Jan  5 01:27:48 ip-172-31-82-247 sudo: pam_unix(sudo:session): session closed fo               r user root
+Jan  5 01:29:03 ip-172-31-82-247 sudo: ec2-user : TTY=pts/0 ; PWD=/var/log ; USE               R=root ; COMMAND=/bin/cat secure
+Jan  5 01:29:03 ip-172-31-82-247 sudo: pam_unix(sudo:session): session opened fo               r user root by ec2-user(uid=0)
+[ec2-user@ip-172-31-82-247 log]$
