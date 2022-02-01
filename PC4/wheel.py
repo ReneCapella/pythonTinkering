@@ -36,29 +36,28 @@ def load_word():
         solution.append(char)
 
 # Create the file if it doesn't exist
-if not os.path.exists(filename):
-    file = open("solutions.txt", "w")
+file = open("solutions.txt", "w")
 
-    file.write("""pumpkin
-    apple
-    cucumber
-    corn
-    pepper
-    banana
-    yam
-    raspberry
-    marionberry
-    kiwi
-    radish
-    watermelon
-    lime
-    strawberry
-    gourd
-    carrot
-    onion
-    pear
-    orange
-    turnip""")
+file.write("""pumpkin
+apple
+cucumber
+corn
+pepper
+banana
+yam
+raspberry
+marionberry
+kiwi
+radish
+watermelon
+lime
+strawberry
+gourd
+carrot
+onion
+pear
+orange
+turnip""")
 
 
 with open("solutions.txt", "r") as file:
