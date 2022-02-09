@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+{% if marks>50 %}
+   <h1> Your result is pass!</h1>
+{% else %}
+   <h1>Your result is fail</h1>
+{% endif %}
+{% endblock %}
