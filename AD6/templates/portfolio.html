@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}Portfolio{% endblock %}
+{% block content %}
+<div class="container-fluid px-0" style="background-color: white; color: black;">
+  <div class="row  mx-0">
+    <div class="col-md-6 col-sm-12 px-0">
+      <div class="flip-container" onclick="this.classList.toggle('clicked');">
+        <div class="flipper">
+          <div class="front">
+            <div class="thumbnail">
+              <img class="img-fluid h-100" id="img-cover" src="{{url_for('static', filename='cloudcoach.png')}}" alt="#">
+            </div>
+          </div>
+          <div class="back">
+            <h2 class="">Project Info here and links:)</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 px-0">
+      <div class="flip-container" onclick="this.classList.toggle('clicked');">
+        <div class="flipper">
+          <div class="front">
+            <div class="thumbnail">
+              <img class="img-fluid h-100" id="img-cover" src="{{url_for('static', filename='pantry.png')}}" alt="#">
+            </div>
+          </div>
+          <div class="back">
+            <h2 class="">Project Info here and links:)</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 px-0">
+      <div class="flip-container" onclick="this.classList.toggle('clicked');">
+        <div class="flipper">
+          <div class="front">
+            <div class="thumbnail">
+              <img class="img-fluid h-100" src="{{url_for('static', filename='mastermind.png')}}" alt="#" id="img-cover">
+            </div>
+          </div>
+          <div class="back">
+            <h2 class="">Project Info here and links:)</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 px-0">
+      <div class="flip-container" onclick="this.classList.toggle('clicked');">
+        <div class="flipper">
+          <div class="front">
+            <div class="thumbnail">
+              <img class="img-fluid h-100" id="img-cover" src="{{url_for('static', filename='justingraphic.png')}}" alt="#">
+            </div>
+          </div>
+          <div class="back">
+            <h2 class="">Project Info here and links:)</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 px-0">
+      <div class="flip-container" onclick="this.classList.toggle('clicked');">
+        <div class="flipper">
+          <div class="front">
+            <div class="thumbnail">
+              <img class="img-fluid h-100" id="img-cover" src="{{url_for('static', filename='stargazer.png')}}" alt="#">
+            </div>
+          </div>
+          <div class="back">
+            <h2 class="">Project Info here and links:)</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 px-0">
+      <div class="flip-container" onclick="this.classList.toggle('clicked');">
+        <div class="flipper">
+          <div class="front">
+            <div class="thumbnail">
+              <img class="img-fluid h-100" id="img-cover" src="{{url_for('static', filename='yarn.png')}}" alt="#">
+            </div>
+          </div>
+          <div class="back">
+            <h2 class="">Project Info here and links:)</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 px-0">
+      <div class="flip-container" onclick="this.classList.toggle('clicked');">
+        <div class="flipper">
+          <div class="front">
+            <div class="thumbnail">
+              <img src="{{url_for('static', filename='typepolitik.png')}}" alt="#" class="img-fluid h-100" id="img-cover">
+            </div>
+          </div>
+          <div class="back">
+            <h2 class="">Project Info here and links:)</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 px-0">
+      <div class="flip-container" onclick="this.classList.toggle('clicked');">
+        <div class="flipper">
+          <div class="front">
+            <div class="thumbnail">
+              <img src="{{url_for('static', filename='booksandbeers.png')}}" alt="#" class="img-fluid h-100" id="img-cover">
+            </div>
+          </div>
+          <div class="back">
+            <h2 class="">Project Info here and links:)</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
