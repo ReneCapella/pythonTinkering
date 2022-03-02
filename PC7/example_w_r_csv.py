@@ -52,4 +52,15 @@ if add == "Y":
         employee_writer.writerow(to_add)
         employee_file.write("\n")
 else:
-    print("Okie Dokie, Artichokie: see you later!")
+    with open(file_name) as csvfile:
+        reader = csv.reader(csvfile)
+        all_rows = []
+        for row in reader:
+            all_rows.append(row)
+            for field in row:
+            if field == "Harper Lee"
+
+                all_rows.remove(row)
+
+
+print("Okie Dokie, Artichokie: see you later!")
