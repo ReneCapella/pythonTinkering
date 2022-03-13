@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}one{% endblock %}
+{% block content %}
+<audio autoplay id="audiofile">
+    <source src="{{ url_for('static', filename = 'one3.mp3') }}" type="audio/mpeg">
+</audio>
+<a class="btn btn-primary btn-lg" href="{{url_for('bridge')}}">To the bridge</a>
+<div id="subtitles" style="color: #2d383a; font-size: 100px;"></div>
+<script type="text/javascript">
+  document.syncData= [
+            {"end": "0.427","start": "0.000","text": "One" },
+            {"end": "0.755","start": "0.427","text": "is" },
+            {"end": "1.083","start": "0.755","text": "the" },
+            {"end": "1.706","start": "1.083","text": "lonliest" },
+            {"end": "2.789","start": "1.706","text": "number" },
+            {"end": "3.839","start": "2.789","text": "oh" },
+            {"end": "4.364","start": "3.839","text": "worse" },
+            {"end": "4.627","start": "4.364","text": "than" },
+            {"end": "7.055","start": "4.627","text": "two" }
+          ];
+</script>
+<script src="{{url_for('static', filename='javascript/subtitles.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}one{% endblock %}
+{% block content %}
+<audio autoplay id="audiofile">
+    <source src="{{ url_for('static', filename = 'one35.mp3') }}" type="audio/mpeg">
+</audio>
+<form method="POST" action="one">
+    <input type="text" name="seventh_guess"
+           placeholder="51 minus 50"
+           value="{{ request.form['seventh_guess'] }}"
+           autocomplete="off"></input>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<div class="">
+  <div id="subtitles1" style="color: #2d383a; font-size: 60px;"></div>
+  <br>
+  <br>
+  <br>
+  <div id="subtitles2" style="color: #2d383a; font-size: 60px;"></div>
+</div>
+
+<script type="text/javascript">
+  document.syncData1= [
+            {"end": "0.515","start": "0.000","text": "It's" },
+            {"end": "1.049","start": "0.515","text": "just" },
+            {"end": "1.445","start": "1.049","text": "no" },
+            {"end": "1.801","start": "1.445","text": "good" },
+            {"end": "2.652","start": "1.801","text": "anymore" },
+            {"end": "3.167","start": "2.652","text": "since" },
+            {"end": "3.523","start": "3.167","text": "you" },
+            {"end": "3.879","start": "3.523","text": "went" },
+            {"end": "6.274","start": "3.879","text": "away" }
+          ];
+  document.syncData2= [
+            {"end": "6.888","start": "6.353","text": "Now" },
+            {"end": "7.125","start": "6.888","text": "I" },
+            {"end": "7.521","start": "7.125","text": "spend" },
+            {"end": "8.036","start": "7.521","text": "my " },
+            {"end": "8.847","start": "8.036","text": "time" },
+            {"end": "9.263","start": "8.847","text": "just" },
+            {"end": "9.995","start": "9.263","text": "making" },
+            {"end": "11.103","start": "9.995","text": "rhymes" },
+            {"end": "11.341","start": "11.103","text": "of" },
+            {"end": "14.369","start": "11.341","text": "yesterday" }
+          ];
+</script>
+<script src="{{url_for('static', filename='javascript/subtitles_bridge.js')}}"></script>
+{% endblock %}

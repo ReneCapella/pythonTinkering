@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}one{% endblock %}
+{% block content %}
+<audio autoplay id="audiofile">
+    <source src="{{ url_for('static', filename = 'one6.mp3') }}" type="audio/mpeg">
+</audio>
+<a class="btn btn-primary btn-lg" href="https://voices.org.ua/en/">Support Ukraine</a>
+<div id="subtitles" style="color: #005bbc; font-size: 100px;"></div>
+<script type="text/javascript">
+  document.syncData= [
+            { "end": "1.082","start": "0.000","text": "One" },
+            {"end": "1.560","start": "1.082","text": "is" },
+            {"end": "1.886","start": "1.571","text": "the" },
+            {"end": "2.840","start": "1.886","text": "lonliest" },
+            {"end": "3.620","start": "2.840","text": "number" },
+            {"end": "3.899","start": "3.620","text": "that" },
+            {"end": "4.202","start": "3.899","text": "you'll" },
+            {"end": "4.749","start": "4.202","text": "ever" },
+            {"end": "6.611","start": "4.749","text": "do" },
+          ];
+</script>
+<script src="{{url_for('static', filename='javascript/fin.js')}}"></script>
+{% endblock %}

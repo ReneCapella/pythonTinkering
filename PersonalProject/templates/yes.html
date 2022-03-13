@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Let's do this{% endblock %}
+{% block content %}
+<audio id="audiofile" autoplay>
+    <source src="{{ url_for('static', filename = 'yes.mp3') }}" type="audio/mpeg">
+</audio>
+<form method="POST" action="one">
+    <input type="text" name="fifth_guess"
+           placeholder="The lonliest."
+           value="{{ request.form['fifth_guess'] }}"
+           autocomplete="off"></input>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<div id="subtitles" style="color: #2d383a; font-size: 100px;"></div>
+<script type="text/javascript">
+  document.syncData= [
+              { "end": "1.141","start": "0.000","text": "Yes," },
+              {"end": "1.525","start": "1.141","text": "it's" },
+              {"end": "1.734","start": "1.525","text": "the" },
+              {"end": "2.631","start": "1.743","text": "saddest" },
+              {"end": "3.829","start": "2.631","text": "experience" },
+              {"end": "4.435","start": "3.829","text": "you'll" },
+              {"end": "4.772","start": "4.353","text": "ever" },
+              {"end": "6.553","start": "4.772","text": "know" },
+          ];
+</script>
+<script src="{{url_for('static', filename='javascript/subtitles.js')}}"></script>
+{% endblock %}

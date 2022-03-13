@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Let's do this{% endblock %}
+{% block content %}
+<audio autoplay>
+    <source src="{{ url_for('static', filename = 'intro.mp3') }}" type="audio/mpeg">
+</audio>
+<form method="POST" action="one">
+    <input type="text" name="guess"
+           placeholder="The Lonliest Number"
+           value="{{ request.form['guess'] }}"
+           autocomplete="off">
+    </input>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

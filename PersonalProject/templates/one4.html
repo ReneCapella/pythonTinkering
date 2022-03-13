@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}one{% endblock %}
+{% block content %}
+<audio autoplay id="audiofile">
+    <source src="{{ url_for('static', filename = 'one4.mp3') }}" type="audio/mpeg">
+</audio>
+<form method="POST" action="one">
+    <input type="text" name="eigth_guess"
+           placeholder="unit circle radius"
+           value="{{ request.form['eigth_guess'] }}"
+           autocomplete="off"></input>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<div id="subtitles" style="color: #2d383a; font-size: 100px;"></div>
+<script type="text/javascript">
+  document.syncData= [
+            {"end": "1.029","start": "0.000","text": "One"},
+            {"end": "1.526","start": "0.976","text": "is" },
+            {"end": "1.754","start": "1.526","text": "the" },
+            {"end": "2.842","start": "1.764","text": "lonliest" },
+            {"end": "3.628","start": "2.842","text": "oh number" },
+            {"end": "3.689","start": "3.628","text": "ber"}
+          ];
+</script>
+<script src="{{url_for('static', filename='javascript/subtitles.js')}}"></script>
+{% endblock %}

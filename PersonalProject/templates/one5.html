@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}one{% endblock %}
+{% block content %}
+<audio autoplay id="audiofile">
+    <source src="{{ url_for('static', filename = 'one5.mp3') }}" type="audio/mpeg">
+</audio>
+<form method="POST" action="one">
+    <input type="text" name="ninth_guess"
+           placeholder="nomer odyn anhliysʹkoyu"
+           value="{{ request.form['ninth_guess'] }}"
+           autocomplete="off"></input>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<div id="subtitles" style="color: #2d383a; font-size: 100px;"></div>
+<script type="text/javascript">
+  document.syncData= [
+            { "end": "0.930","start": "0.000","text": "One" },
+            {"end": "1.941","start": "0.930","text": "is the" },
+            {"end": "3.061","start": "1.941","text": "lonliest" },
+            {"end": "3.946","start": "3.061","text": "number" }
+          ];
+</script>
+<script src="{{url_for('static', filename='javascript/subtitles.js')}}"></script>
+{% endblock %}

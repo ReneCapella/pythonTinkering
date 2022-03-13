@@ -1,0 +1,16 @@
+/* entire container, keeps perspective */
+body {
+  background-color: #2d383a;
+  color: #cfdfdc;
+  font-size: 25px;
+}
+
+.three-dog-day-mode {
+  background-color: #cfdfdc;
+  color: #2d383a;
+}
+
+.footer {
+	display: flex;
+	flex-direction: row-reverse;
+}

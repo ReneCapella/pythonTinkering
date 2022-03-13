@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}one{% endblock %}
+{% block content %}
+<audio id="audiofile" autoplay>
+    <source src="{{ url_for('static', filename = 'one2.mp3') }}" type="audio/mpeg">
+</audio>
+<form method="POST" action="one">
+    <input type="text" name="sixth_guess"
+           placeholder="that you'll ever do"
+           value="{{ request.form['sixth_guess'] }}"
+           autocomplete="off"></input>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<div id="subtitles" style="color: #2d383a; font-size: 100px;"></div>
+<script type="text/javascript">
+  document.syncData= [
+            { "end": "0.570","start": "0.000","text": "Cause'" },
+            { "end": "0.943","start": "0.570","text": "one" },
+            {"end": "1.339","start": "0.943","text": "is" },
+            {"end": "1.538","start": "1.339","text": "the" },
+            {"end": "2.258","start": "1.538","text": "lonliest" },
+            {"end": "3.892","start": "2.258","text": "number" },
+            {"end": "4.097","start": "3.892","text": "that" },
+            {"end": "4.470","start": "4.097","text": "you'll" },
+            {"end": "4.993","start": "4.470","text": "ever" },
+            {"end": "6.658","start": "4.993","text": "do" }
+          ];
+</script>
+<script src="{{url_for('static', filename='javascript/subtitles.js')}}"></script>
+{% endblock %}
